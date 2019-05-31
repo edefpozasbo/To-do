@@ -1,0 +1,49 @@
+<div class="body">
+  <div>
+    <h2>Lists</h2>
+    <hr>
+    <div class="form">
+      <input type="text" [(ngModel)]="listNew.name" placeholder="Title" class="w100">
+      <hr>
+      <textarea [(ngModel)]="listNew.description" placeholder="Description" class="w100"></textarea>
+      <input type="text" [(ngModel)]="listNew.user" placeholder="User" class="w100">
+      <div class="c_btnaddlist">
+        <input type="submit" (click)="addList()" value="Create list">
+      </div>
+    </div>
+  </div>
+  <div class="lists_container">
+    <div *ngFor="let list of lists" class="it_list">
+      <label class="" >Name</label>
+      <input *ngIf="editList && this._idModeEdit==list._id" type="text" value="{{list.name}}" [(ngModel)]="list.name">
+      <label *ngIf="!editList" class="fs12" >{{list.name}}</label>
+      <label class="" >Description</label>
+      <textarea *ngIf="editList && this._idModeEdit==list._id" placeholder="Description" class="w100" [(ngModel)]="list.description">{{list.description}}</textarea>
+      <label *ngIf="!editList" class="fs12" >{{list.description}}</label>
+      <label class="" >User</label>
+      <input *ngIf="editList && this._idModeEdit==list._id" type="text" value="{{list.user}}" [(ngModel)]="list.user">
+      <label *ngIf="!editList" class="fs12" >{{list.user}}</label>
+      <label class="" >Created</label>
+      <label class="fs12" >{{list.created_at}}</label>
+      <div class="it_list_btns tc">
+        <input *ngIf="!editList " type="submit" value="Delete" (click)="deleteList(list._id)">
+        <input *ngIf="!editList"type="submit" value="Edit" (click)="selectList(list._id)">
+        <input *ngIf="editList && this._idModeEdit==list._id" type="submit" value="Cancel edition" (click)="resetList()">
+        <input *ngIf="editList && this._idModeEdit==list._id"type="submit" value="Save changes" (click)="updateList(list)">
+      </div>
+      <hr>
+      <div class="w100 tc">
+        <input type="submit" value="Add tasks" (click)="addTask(list._id)"/>
+      </div>
+      <ul class="">
+        <li *ngFor="let task of list.tasks" class="it_list_li" >
+          <input type="checkbox" value="{{task.state}}" [(ngModel)]="task.state" (change)="updateList(list)">
+          <input  type="text" value="{{task.content}}" [(ngModel)]="task.content" (change)="updateList(list)">
+          <input type="submit" value="Delete task" (click)="removeTask(list._id,task._id)">
+          <label> {{task.created_at}}  </label>
+          <hr>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

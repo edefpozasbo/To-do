@@ -1,0 +1,102 @@
+.body{
+    font-family:Arial;
+    font-size: 18px;
+    background-color: #f1f1f1;
+    width: 80%;
+    margin :auto;
+    padding: 2%;
+    box-shadow:  0 0 10px rgba(0,0,0,0.2);
+}
+.w100{
+    width: 100%;
+}
+.form{
+    width: 50%;
+    margin :auto;
+    background-color: #fff;
+    box-shadow:  0 0 10px rgba(0,0,0,0.1);
+    padding: 2% 5%;
+}
+.c_btnaddlist{
+    text-align: right;
+    padding: 2%;
+}
+input[type="text"],textarea{
+    border:none;
+    font-size:18px;
+}
+input[type="submit"]{
+    border:none;
+    padding:10px;
+    font-weight: bold;
+    background-color: #f1f1f1;
+    cursor:pointer;
+}
+.lists_container{
+    width:80%;
+    margin:auto;
+    text-align: center;
+}
+.it_list{
+    vertical-align: top;
+    display:inline-block;
+    width:25%;
+    margin:2%;
+    padding:2%;
+    border-radius: 5%;
+    background-color: #fff;
+    box-shadow:  0 0 10px rgba(0,0,0,0.1);
+    text-align: left;
+}
+.it_list:hover{
+    box-shadow:  0 0 10px rgba(0,0,0,0.3);
+}
+.it_list>label{
+    width:100%;
+    display:block;
+    margin:1%;
+}
+.it_list>input{
+    width:100%;
+    display:block;
+    margin:1%;
+}
+.fs12{
+    font-size:12px;
+}
+.it_list_btns>input{
+    margin: 5% 5%;
+}
+.tc{text-align:center;}
+ul{
+    list-style: none;
+    margin:0;
+    padding: 0;
+}
+.it_list_li{
+    margin-top: 2%;
+    width:100%;
+    text-align: center;
+}
+/*.it_list_li>label{
+    width:100%;
+    display:inline-block;
+    margin:1%;
+}*/
+.it_list_li>input[type="checkbox"]{
+    width:10%;
+    display:inline-block;
+}
+.it_list_li>input{
+    width:80%;
+    display:inline-block;
+    font-size: 10px;
+    vertical-align: middle;
+    font-weight: bold;
+}
+.it_list_li>label{
+    width:100%;
+    font-size: 10px;
+}
+
+
